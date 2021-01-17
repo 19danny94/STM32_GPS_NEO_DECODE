@@ -30,7 +30,7 @@ void GPS_p(){
     
     if (strstr(GPS.message, "$GNGGA")){
         //Valid message in stream
-        //Beispiel von Position zuhause $GNGGA,151017.00,4916.72813,N,01127.64911,E,1,09,0.93,435.5,M,46.6,M,,*4A
+        //Beispiel von Position zuhause $GNGGA,151017.00,2916.72813,N,01127.64911,E,1,09,0.93,435.5,M,46.6,M,,*4A
         GPS.message2 = strstr(GPS.message,"$GNGGA");         //pointer auf begin des GNGGA satzes setzen
         sscanf(GPS.message2, "$GNGGA,%2hd%2hd%2hd.%2hd,%lf,%c,%lf,%c,%hd,%hd,%lf,%lf,M,%lf,M,,*%x",&GPS.hour,&GPS.min,&GPS.sec,&GPS.millis,&GPS.lat,&GPS.NS_ind,&GPS.lon,&GPS.EW_ind,&GPS.fixtype,&GPS.sats,&GPS.hdop,&GPS.alt,&GPS.bla,&GPS.checksum);
         
