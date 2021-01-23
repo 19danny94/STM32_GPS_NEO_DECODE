@@ -8,7 +8,7 @@ How to use existing Code:
 Please make sure you selected "Generate peripheral initialization as a pair of .c/.h" at your "project manager Tab" in Cube IDE
 include the GPS.h into you Project
 
-ad your Callback Function for the reception interrupt like this:
+add your Callback Function for the reception interrupt like this:
 
 	void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	{
@@ -19,7 +19,7 @@ ad your Callback Function for the reception interrupt like this:
 	}
 	
 	
-Call GPS_p function is there is a new Dataset in the Buffer. You have to make sure that your.message variable in your GPS_t struct contains the new Data
+Call GPS_p function is there is a new Dataset in the Buffer. You have to make sure that your .message variable in your GPS_t struct contains the new Data
 
 		 if(update){
 	  		  update=false;
@@ -29,6 +29,8 @@ Call GPS_p function is there is a new Dataset in the Buffer. You have to make su
 
 
 Now you can work with the Data. i added an:
+
 	if(Position.valid){
 	}
+	
 loop to my Code
